@@ -4,6 +4,8 @@ DetectHiddenWindows, On
 IniRead, VidPath, ..\..\Launch\Vars\CustomVideo.inc, Variables, VideoPath
 IniRead, LoopBool, ..\..\Launch\Vars\CustomVideo.inc, Variables, Loop
 IniRead, SoundBool, ..\..\Launch\Vars\CustomVideo.inc, Variables, Sound
+IniRead, Location, ..\Vars.inc, Variables, Location
+SysGet, Mon, Monitor, %Location%
 
 FadeIn(Window, Speed="1")
 {
@@ -36,11 +38,11 @@ FadeOut(Window, Speed="1")
 }
 
 If (SoundBool = 1) {
-	Run, ffplay "%VidPath%" -left 0 -top 0 -loop %LoopBool% -window_title "IdleStyle" -hide_banner,, Hide
+	Run, ffplay "%VidPath%" -left %MonLeft% -top %MonTop% -loop %LoopBool% -window_title "IdleStyle" -hide_banner,, Hide
 }
 else
 {
-	Run, ffplay "%VidPath%" -left 0 -top 0 -loop %LoopBool% -window_title "IdleStyle" -hide_banner -an,, Hide
+	Run, ffplay "%VidPath%" -left %MonLeft% -top %MonTop% -loop %LoopBool% -window_title "IdleStyle" -hide_banner -an,, Hide
 }
 WinWait, IdleStyle
 WinSet, AlwaysOnTop, On, IdleStyle

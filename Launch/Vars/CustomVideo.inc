@@ -1,8 +1,5 @@
 [Variables]
-VideoPath=C:\Users\enhan\Downloads\Toady   3D Animation Loop.mp4
-; LineOneStyle=IdleDuration
-; LineTwoStyle=GreetingMessage
-; LineColor=255,255,255
-Videoname=Toady   3D Animation Loop
+VideoPath=C:\Users\enhan\Videos\2021-11-02 21-24-24.mp4
+Videoname=2021-11-02 21-24-24
 Loop=1
 Sound=0

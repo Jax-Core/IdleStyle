@@ -1,6 +1,6 @@
 [Variables]
-SaveLocation="#SKINSPATH#IdleStyle\Launch\Vars\CustomCenter.inc"
-SaveKey=LineTwoStyle
+SaveLocation="#SKINSPATH#IdleStyle\Launch\Vars\CoreUI.inc"
+SaveKey=LineOneStyle
 
 [String:S]
 Text=#CURRENTSECTION#

@@ -27,9 +27,9 @@ MouseScrollUpAction=[!SetVariable Scroll "(Clamp(#Scroll#+50,Clamp(#Set.H#-#Set.
 Measure=Script
 ScriptFile="#SKINSPATH##Skin.name#\Core\Gen.lua"
 
-[HotkeysT2itle]
+[Customization]
 Meter=String
-Text=Customization
+Text=Background customization
 MeterStyle=Set.String:S | Set.OptionCat:S
 
 [Option01]
@@ -44,7 +44,7 @@ Meter=String
 Text=Background color
 MeterStyle=Set.String:S | Set.OptionName:S
 
-[Sdsds]
+[SkinsList]
 Meter=String
 Text=List of skins
 MeterStyle=Set.String:S | Set.OptionCat:S
@@ -55,20 +55,16 @@ MeterStyle=Set.String:S | Set.OptionCat:S
 ; ---------------------------------------------------------------------------- ;
 
 [Sec.Edit:S]
-Fill=Fill Color 0,255,50,100
-MouseOverAction=[!SetOption #CURRENTSECTION# Fill "Fill Color 0,255,50,200"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color 0,255,50,100"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-X=(#Set.W#-#Set.L#-#Set.P#*2-190*[Set.S])
-Shape=Rectangle (160*[Set.S]),0,(30*[Set.S]),(30*[Set.S]),3,3 | StrokeWidth 0 | Extend Fill
-Act=[!SetVariable Editing "#CURRENTSECTION#"][!UpdateMEasure Choose:M][!CommandMeasure Choose:M "ChooseFile 1"]
+OverColor=0,255,50,200
+LeaveColor=0,255,50,100
+Group=ActionButtonShape | Actions
+LeftMouseUpAction=[!SetVariable Editing "#CURRENTSECTION#"][!UpdateMEasure Choose:M][!CommandMeasure Choose:M "ChooseFile 1"]
 
 [Sec.Delete:S]
-Fill=Fill Color 255,0,0,100
-MouseOverAction=[!SetOption #CURRENTSECTION# Fill "Fill Color 255,0,0,200"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color 255,0,0,100"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-X=(#Set.W#-#Set.L#-#Set.P#*2-190*[Set.S])
-Shape=Rectangle (160*[Set.S]),0,(30*[Set.S]),(30*[Set.S]),3,3 | StrokeWidth 0 | Extend Fill
-Act=[!CommandMeasure Script:M "Remove(0, '#CURRENTSECTION#')"]
+OverColor=255,0,0,200
+LeaveColor=255,0,0,100
+Group=ActionButtonShape | Actions
+LeftMouseUpAction=[!CommandMeasure Script:M "Remove(0, '#CURRENTSECTION#')"]
 
 
 
@@ -126,3 +122,13 @@ Y=([Option02:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Meter=String
 Text=#BackgroundOpacity#
 MeterStyle=Set.String:S | Set.Pacity:S
+
+; ------------------------------- Info buttons ------------------------------- ;
+
+[Info:SkinsList]
+Meter=Shape
+MeterStyle=Set.RectButton:S
+Y=([SkinsList:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Info02]
+Meter=String
+MeterStyle=Set.String:S | Set.Icon:S

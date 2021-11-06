@@ -52,7 +52,7 @@ X=r
 Y=(30*[Set.S])R
 MeterStyle=Select:S
 
-[CustomCenter]
+[Center]
 Meter=Image
 MeterStyle=Select:S
 

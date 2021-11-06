@@ -1,22 +1,27 @@
 function Initialize()
     _, t = SKIN:GetVariable('SkinRow'):gsub("|", "|")
-    t = t + 1
     saveLocation = SKIN:GetVariable('Sec.SaveLocation')
     root = SKIN:GetVariable('ROOTCONFIGPATH')
     skinroot = SKIN:GetVariable('SKINSPATH')..SKIN:GetVariable('Skin.Name')..'\\'
-    if t == nil then
-        print("ERROR, CONTACT DEVELOPER FOR MORE INFORMATION")
-    elseif t >= 1 then
+
+    if t == 0 and SKIN:GetVariable('SkinRow') == '' then
+        -- ------------------ generate if SkinRow variable is blank ----------------- --
+        print('Blank canvas. Writing data right now.')
+        Add()
+    elseif SKIN:GetMeter('Option1') == nil then
+        -- ------------------ generate if the include.inc is blank ------------------ --
+        print('Include.inc is not genereated. Generating now...')
+        Add()
+    else
+        -- ------------------------ write variables to memory ----------------------- --
+        t = t + 1
         local RowString = SKIN:GetVariable('SkinRow')
         SRT = Separate(RowString)
         for i=1,t do
             _G["Config"..i] = SRT[i]
         end
-    elseif t == 0 then
-        print('Blank canvas. Writing data right now.')
-        Add()
     end
-
+    
     if tonumber(SKIN:GetVariable('Sec.ForceWriteVariables')) == 1 then
         print('Force-Writing')
         local t1 = t
@@ -68,7 +73,6 @@ end
 function Add()
     local resultString = ''
     for i=1, (t + 1) do
-        print(i, t)
         if i < (t + 1) then
             resultString = resultString.._G["Config"..i]..' | '
         else
@@ -91,14 +95,14 @@ function Remove(initSelection, startingIndex)
     if initSelection == 1 and toggleDelete == 0 then
         toggleDelete = 1
         SKIN:Bang('!SetOptionGroup', 'ActionButton', 'Text', '[\\xF78A]')
-        SKIN:Bang('!SetOptionGroup', 'ActionButtonShape', 'MeterStyle', 'Set.Button:S | Sec.Delete:S')
+        SKIN:Bang('!SetOptionGroup', 'ActionButtonShape', 'MeterStyle', 'Set.RectButton:S | Sec.Delete:S')
         SKIN:Bang('!SetOptionGroup', 'ActionButtonShape', 'Fill', 'Fill Color 255,0,0,100')
         SKIN:Bang('!UpdateMeterGroup', 'Actions')
         SKIN:Bang('!Redraw')
     elseif initSelection == 1 and toggleDelete == 1 then
         toggleDelete = 0
         SKIN:Bang('!SetOptionGroup', 'ActionButton', 'Text', '[\\xE70F]')
-        SKIN:Bang('!SetOptionGroup', 'ActionButtonShape', 'MeterStyle', 'Set.Button:S | Sec.Edit:S')
+        SKIN:Bang('!SetOptionGroup', 'ActionButtonShape', 'MeterStyle', 'Set.RectButton:S | Sec.Edit:S')
         SKIN:Bang('!SetOptionGroup', 'ActionButtonShape', 'Fill', 'Fill Color 0,255,50,100')
         SKIN:Bang('!UpdateMeterGroup', 'Actions')
         SKIN:Bang('!Redraw')
@@ -158,9 +162,8 @@ function Write(t1, t2, t3)
         File:write(
         '[EditButton'..i..']\n'
         ,'Meter=Shape\n'
-        ,'MeterStyle=Set.Button:S | Sec.Edit:S\n'
+        ,'MeterStyle=Set.RectButton:S | Sec.Edit:S\n'
         ,'Y=([Option'..i..':Y]-#Set.P#+(-30/2+8)*[Set.S])\n'
-        ,'Group=ActionButtonShape | Actions\n'
         
         ,'[EditIcon'..i..']\n'
         ,'Meter=String\n'

@@ -1,34 +1,34 @@
-[HotkeysTitle]
+[IdleTiming]
 Meter=String
-Text=Idle timing
+Text=Activation
 MeterStyle=Set.String:S | Set.OptionCat:S
 
 [Option01]
 Meter=String
-Text=Time till the window shows
+Text=Hotkey for pausing IdleStyle
 MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:S1913s138]
+[Set.Div:38]
 Meter=Shape
 MeterStyle=Set.Div:S
 [Option02]
 Meter=String
-Text=Close the window after the idle time resets
-MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:13s138]
-Meter=Shape
-MeterStyle=Set.Div:S
-[Option03]
-Meter=String
-Text=Fetch webnowplaying status to see if Youtube is playing anything
+Text=Time till the window shows
 MeterStyle=Set.String:S | Set.OptionName:S
 
-[CoTitle]
+[Position]
 Meter=String
 Text=Position
 MeterStyle=Set.String:S | Set.OptionCat:S
 [Option11]
 Meter=String
 Text=Screen to display on
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:123123]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option12]
+Meter=String
+Text=Amount of screens to stretch horizontally
 MeterStyle=Set.String:S | Set.OptionName:S
 
 [Time]
@@ -40,36 +40,74 @@ MeterStyle=Set.String:S |  Set.OptionCat:S
 Meter=String
 Text=Time format: 24(H) 12(I)
 MeterStyle=Set.String:S | Set.OptionName:S
+
+[Checks]
+Meter=String
+Text=Idle checks
+MeterStyle=Set.String:S |  Set.OptionCat:S
+
+[Option31]
+Meter=String
+Text=Fullscreen check
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:318]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option32]
+Meter=String
+Text=Youtube player check
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:1S1913s138]
+Meter=Shape
+Hidden=(1-#YoutubeCheck#)
+MeterStyle=Set.Div:S
+[Option33]
+Meter=String
+Text=Youtube state check
+Hidden=(1-#YoutubeCheck#)
+MeterStyle=Set.String:S | Set.OptionName:S
+
 ; ---------------------------------------------------------------------------- ;
 ;                                     Input                                    ;
 ; ---------------------------------------------------------------------------- ;
+[Button01]
+Meter=Shape
+MeterStyle=Set.Button:S
+Y=([Option01:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Act=[!CommandMeasure Func "startSide('Hotkey')"]
+[Value01]
+Meter=String
+Text=#KeyInString#
+MeterStyle=Set.String:S | Set.Value:S
 
 [TimeOut]
 Meter=Shape
 MeterStyle=Set.Textbox:S
 Type=Time
-Y=([Option01:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[Value01]
+Y=([Option02:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Value02]
 Meter=String
 Text=#TimeOut#
 MeterStyle=Set.String:S | Set.Value:S
-[CloseAfterReturn]
-Meter=Shape
-MeterStyle=Set.Bool:S
-Y=([Option02:Y]-#Set.P#+(-20/2+8)*[Set.S])
-[YoutubeCheck]
-Meter=Shape
-MeterStyle=Set.Bool:S
-Y=([Option03:Y]-#Set.P#+(-20/2+8)*[Set.S])
 
 [Location]
 Meter=Shape
 MeterStyle=Set.Textbox:S
 Y=([Option11:Y]-#Set.P#+(-30/2+8)*[Set.S])
-Type=Int
+Type=Int|1|100
 [Value11]
 Meter=String
 Text=#Location#
+MeterStyle=Set.String:S | Set.Value:S
+
+[Stretch]
+Meter=Shape
+MeterStyle=Set.Textbox:S
+Y=([Option12:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Type=Int|0|2
+[Value12]
+Meter=String
+Text=#Stretch#
 MeterStyle=Set.String:S | Set.Value:S
 
 [2412:]
@@ -91,5 +129,44 @@ Text=24-hour
 FontColor=([&Func:returnBool('2412', 'H')] = 1 ? 0 : 255),([&Func:returnBool('2412', 'H')] = 1 ? 0 : 255),([&Func:returnBool('2412', 'H')] = 1 ? 0 : 255)
 LeftMouseUpAction=[&Func:GroupVar('#CURRENTSECTION#', '1Act')][!Refresh][!UpdateMeasure Auto_Refresh:M]
 MeterStyle=Set.String:S | Set.PickOption_1:S
-[Variables]
-Sec.ForceWriteVariables=1
+
+[FullScreenCheck]
+Meter=Shape
+MeterStyle=Set.Bool:S
+Y=([Option31:Y]-#Set.P#+(-20/2+8)*[Set.S])
+[YoutubeCheck]
+Meter=Shape
+MeterStyle=Set.Bool:S
+Y=([Option32:Y]-#Set.P#+(-20/2+8)*[Set.S])
+[YoutubeState]
+Meter=Shape
+MeterStyle=Set.Bool:S
+Hidden=(1-#YoutubeCheck#)
+Y=([Option33:Y]-#Set.P#+(-20/2+8)*[Set.S])
+
+[Info:IdleTiming]
+Meter=Shape
+MeterStyle=Set.RectButton:S
+Y=([IdleTiming:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Info01]
+Meter=String
+MeterStyle=Set.String:S | Set.Icon:S
+
+[Info:Position]
+Meter=Shape
+MeterStyle=Set.RectButton:S
+Y=([Position:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Info02]
+Meter=String
+MeterStyle=Set.String:S | Set.Icon:S
+
+[Info:Checks]
+Meter=Shape
+MeterStyle=Set.RectButton:S
+Y=([Checks:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Info03]
+Meter=String
+MeterStyle=Set.String:S | Set.Icon:S
+
+
+@includeKeys=#SKINSPATH##Skin.Name#\@Resources\Actions\HotKeys.ini

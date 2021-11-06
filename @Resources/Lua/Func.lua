@@ -1,22 +1,38 @@
 function CheckPause()
-    local FullMeasure = SKIN:GetMeasure('MeasureIsFullScreen')
-    local mString = FullMeasure:GetStringValue()
-    local mNum = FullMeasure:GetValue()
-
-    if mString:match('Rainmeter%.exe') then
-        mBool = 1
-    else
-        mBool = 0
-    end
-
+    -- ------------------------ if checking youtube is on ----------------------- --
     if tonumber(SKIN:GetVariable('YoutubeCheck')) == 1 then
+        -- -------------------- if media playing is from youtube -------------------- --
         if SKIN:GetMeasure('Youtubecheck'):GetStringValue():match('Youtube') then
-            yBool = 1
+            -- --------------------- if checking youtube pause is on -------------------- --
+            if tonumber(SKIN:GetVariable('YoutubeStatus')) == 1 then
+                if SKIN:GetMeasure('YoutubeStatus'):GetValue() == '1' then
+                    yBool = 1
+                else
+                    yBool = 0
+                end
+            -- ----------------- if checking youtube pause is off, pass ----------------- --
+            else
+                yBool = 1
+            end
+            -- ------------------- if the media playing isn't youtube ------------------- --
         else
             yBool = 0
         end
     end
 
+    if tonumber(SKIN:GetVariable('FullScreenCheck')) == 1 then 
+        FullMeasure = SKIN:GetMeasure('MeasureIsFullScreen')
+        mString = FullMeasure:GetStringValue()
+        mNum = FullMeasure:GetValue()
+        if mString:match('Rainmeter%.exe') then
+            mBool = 1
+        else
+            mBool = 0
+        end
+    else
+        mNum = 0
+    end
+    
     local check = (mNum .. mBool .. yBool)
     if string.match(check, '10.') or string.match(check, '..1') then
         SKIN:Bang('!DisableMeasure', 'IdleTime')

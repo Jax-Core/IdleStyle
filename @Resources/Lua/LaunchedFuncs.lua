@@ -12,10 +12,39 @@ function disp_time(time)
 end
 
 function Initialize()
-    _, t = SKIN:GetVariable('SkinRow'):gsub("|", "|")
-    t = t + 1
-    Group = SKIN:GetVariable('Group')
-    SkinRow = SKIN:GetVariable('SkinRow')
+    local Style = SKIN:GetVariable('Style')
+    local index = tonumber(SKIN:GetVariable('Location'))
+    local stretch = tonumber(SKIN:GetVariable('stretch'))
+    if Style == 'CustomGroup' then
+        _, t = SKIN:GetVariable('SkinRow'):gsub("|", "|")
+        t = t + 1
+        Group = SKIN:GetVariable('Group')
+        SkinRow = SKIN:GetVariable('SkinRow')
+    end
+    if Style == 'Center' or Style == 'CustomGroup' then
+
+        local width = 0
+        for i=index, (stretch + index) do 
+            width = width + SKIN:GetVariable('SCREENAREAWIDTH@'..i)
+        end
+
+        SKIN:Bang('!SetOption', 'Dum', 'W', width)
+        SKIN:Bang('!UpdateMeter', 'Dum')
+        SKIN:Bang('!Redraw')
+    end
+    if Style == 'CoreUI' then
+
+        local width = 0
+        for i=(index+1), (stretch+1) do 
+            width = width + SKIN:GetVariable('SCREENAREAWIDTH@'..i)
+        end
+        SKIN:Bang('!SetOption', 'Dum', 'W', width)
+        SKIN:Bang('!SetOption', 'Dum', 'H', SKIN:GetVariable('SCREENAREAHEIGHT@'..(index+1)))
+        SKIN:Bang('!SetOption', 'Dum', 'X', SKIN:GetVariable('SCREENAREAX@'..(index+1)))
+        SKIN:Bang('!SetOption', 'Dum', 'Y', SKIN:GetVariable('SCREENAREAY@'..(index+1)))
+        SKIN:Bang('!UpdateMeter', 'Dum')
+        SKIN:Bang('!Redraw')
+    end
 end
 
 function Separate(str)
