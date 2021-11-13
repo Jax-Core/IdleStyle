@@ -52,6 +52,14 @@ X=r
 Y=(30*[Set.S])R
 MeterStyle=Select:S
 
+[Ninety]
+Meter=Image
+MeterStyle=Select:S
+
+[JD]
+Meter=Image
+MeterStyle=Select:S
+
 [Center]
 Meter=Image
 MeterStyle=Select:S
@@ -64,6 +72,6 @@ MeterStyle=Select:S
 Meter=Image
 MeterStyle=Select:S
 
-; [Spin]
-; Meter=Image
-; MeterStyle=Select:S
+[CustomPaper]
+Meter=Image
+MeterStyle=Select:S

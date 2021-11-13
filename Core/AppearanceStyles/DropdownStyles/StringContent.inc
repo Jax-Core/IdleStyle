@@ -1,10 +1,9 @@
 [Variables]
-SaveLocation="#SKINSPATH#IdleStyle\Launch\Vars\CoreUI.inc"
-SaveKey=LineTwoStyle
+SaveLocation="#SKINSPATH#IdleStyle\Launch\Vars\#Sec.name#.inc"
 
 [String:S]
 Text=#CURRENTSECTION#
-LeftMouseUpAction=[!WriteKeyValue Variables "#SaveKey#" "#CURRENTSECTION#" "#SaveLocatioN#"][!Refresh "#JaxCore\Main"][!DeactivateConfig]
+LeftMouseUpAction=[!WriteKeyValue Variables "#arg1#" "#CURRENTSECTION#" "#SaveLocatioN#"][!Refresh "#JaxCore\Main"][!DeactivateConfig]
 
 ; ---------------------------------------------------------------------------- ;
 ;                                    Content                                   ;

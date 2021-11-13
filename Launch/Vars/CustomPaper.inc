@@ -1,0 +1,10 @@
+[Variables]
+ImagePath=#@#Images\DefaultPaper.png
+ImageName=DefaultPaper
+LineOneStyle=Time
+LineTwoStyle=BatteryLevel
+FontSize=40
+Color1=255,255,255
+Color2Color=0,0,0
+Color2Opacity=255
+Color2BlurIntensity=7

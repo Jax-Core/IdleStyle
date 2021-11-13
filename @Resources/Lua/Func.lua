@@ -24,13 +24,14 @@ function CheckPause()
         FullMeasure = SKIN:GetMeasure('MeasureIsFullScreen')
         mString = FullMeasure:GetStringValue()
         mNum = FullMeasure:GetValue()
-        if mString:match('Rainmeter%.exe') then
+        if mString:match('Rainmeter%.exe') or mString:match('Explorer%.EXE') then
             mBool = 1
         else
             mBool = 0
         end
     else
         mNum = 0
+        mBool = 0
     end
     
     local check = (mNum .. mBool .. yBool)

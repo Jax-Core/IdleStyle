@@ -21,7 +21,7 @@ function Initialize()
         Group = SKIN:GetVariable('Group')
         SkinRow = SKIN:GetVariable('SkinRow')
     end
-    if Style == 'Center' or Style == 'CustomGroup' then
+    if Style == 'Center' or Style == 'CustomGroup' or Style == 'JD' then
 
         local width = 0
         for i=index, (stretch + index) do 
