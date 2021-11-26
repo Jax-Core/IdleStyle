@@ -2,7 +2,9 @@
   IdleStyle
 </h1>
 
-<h4 align="center">A start menu to replace the default one.</h4>
+<h4 align="center">Stylized screensavers.</h4>
+
+![IdleStyle2](https://user-images.githubusercontent.com/80020581/143574887-e6e32c3d-3100-4ad8-91d8-f1f8cb612ced.png)
 
 ## Description
 
