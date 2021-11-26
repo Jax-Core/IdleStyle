@@ -1,6 +1,6 @@
 [Rainmeter]
 Rightmouseupaction=[]
-OnRefreshAction=[!ZPos 1][!Move ([#SCREENAREAWIDTH@#Location#]/2-#Sec.W#/2) ([#SCREENAREAHEIGHT@#Location#]/2-#Sec.H#/2)][!SetOption Dep3 MeterStyle "Dep.Shape:S | Dep.ShapeYes:S"][!UpdateMEter *][!Redraw]
+OnRefreshAction=[!ZPos 1][!Move (#SCREENAREAWIDTH#/2-#Sec.W#/2) (#SCREENAREAHEIGHT#/2-#Sec.H#/2)][!SetOption Dep3 MeterStyle "Dep.Shape:S | Dep.ShapeYes:S"][!UpdateMEter *][!Redraw]
 
 ; ---------------------------------------------------------------------------- ;
 ;                                  Export vars                                 ;

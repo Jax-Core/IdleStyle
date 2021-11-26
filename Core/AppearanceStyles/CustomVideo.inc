@@ -10,6 +10,22 @@ FileInitialDirectory=
 DynamicVariables=1
 Command1=[!WriteKeyvalue Variables VideoPath "$Path$" "#Sec.SaveLocatioN#"][!WriteKeyvalue Variables Videoname "$Name$" "#Sec.SaveLocatioN#"][!Refresh]
 
+[CheckffplayPowershell]
+MEasure=Plugin
+Plugin=PowershellRM
+DynamicVariables=1
+ScriptFile="#SKINSPATH##Skin.name#\Core\Checkffplay.ps1"
+
+[ffplay]
+Meter=String
+Text=ffplay file availability 
+MeterStyle=Set.String:S | Set.OptionCat:S
+
+[Option110]
+Meter=String
+Text=ffplay file is:
+MeterStyle=Set.String:S | Set.OptionName:S
+
 [HotkeysT2itle]
 Meter=String
 Text=Customization
@@ -45,6 +61,32 @@ MeterStyle=Set.String:S | Set.OptionName:S
 ;                                   Function                                   ;
 ; ---------------------------------------------------------------------------- ;
 
+[Button110]
+Meter=Shape
+MeterStyle=Set.Button:S
+Y=([Option110:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[AvaButtonNo]
+OverColor=#Set.Accent_Color#,150
+LeaveColor=#Set.Accent_Color#,50
+[AvaButtonYes]
+OverColor=0,255,50,200
+LeaveColor=0,255,50,100
+[Value110]
+Meter=String
+MeterStyle=Set.String:S | Set.Value:S
+[AvaTextYes]
+Text=Available
+[AvaTextNo]
+Text=Not available, please check the guide above
+
+[Info:ffplay]
+Meter=Shape
+MeterStyle=Set.RectButton:S
+Y=([ffplay:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Info02]
+Meter=String
+MeterStyle=Set.String:S | Set.Icon:S
+
 [Button01]
 Meter=Shape
 MeterStyle=Set.Button:S
@@ -68,3 +110,4 @@ Fill=Fill Color ([##CURRENTSECTION#] = 0 ? 35 : 181),([##CURRENTSECTION#] = 0 ? 
 Meter=Shape
 MeterStyle=Set.Bool:S
 Y=([Option03:Y]-#Set.P#+(-20/2+8)*[Set.S])
+

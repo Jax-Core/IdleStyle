@@ -1,5 +1,5 @@
 [Variables]
-VideoPath=C:\Users\enhan\Videos\2021-11-02 21-24-24.mp4
-Videoname=2021-11-02 21-24-24
+VideoPath=C:\Users\enhan\Documents\Rainmeter\Skins\IdleStyle\@Resources\Global\DefaultVideo.mp4
+Videoname=DefaultVideo
 Loop=0
 Sound=0

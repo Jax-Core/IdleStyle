@@ -37,3 +37,4 @@ FadeOut(Window, Speed="1")
 
 WinWait, IdleStyle
 FadeOut(IdleStyle, 1)
+ExitApp

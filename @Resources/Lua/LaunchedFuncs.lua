@@ -32,7 +32,7 @@ function Initialize()
         SKIN:Bang('!UpdateMeter', 'Dum')
         SKIN:Bang('!Redraw')
     end
-    if Style == 'CoreUI' then
+    if Style == 'CoreUI' or Style == 'String' then
 
         local width = 0
         for i=(index+1), (stretch+1) do 

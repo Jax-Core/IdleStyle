@@ -1,5 +1,5 @@
 [Variables]
-TimeOut=30s
+TimeOut=1m
 2412=I
 
 FullScreenCheck=0

@@ -6,6 +6,8 @@ IniRead, LoopBool, ..\..\Launch\Vars\CustomVideo.inc, Variables, Loop
 IniRead, SoundBool, ..\..\Launch\Vars\CustomVideo.inc, Variables, Sound
 IniRead, Location, ..\Vars.inc, Variables, Location
 SysGet, Mon, Monitor, %Location%
+MonitorWidth := MonRight - Monleft
+MonitorHeight := MonBottom - MonTop
 
 FadeIn(Window, Speed="1")
 {
@@ -38,11 +40,11 @@ FadeOut(Window, Speed="1")
 }
 
 If (SoundBool = 1) {
-	Run, ffplay "%VidPath%" -left %MonLeft% -top %MonTop% -loop %LoopBool% -window_title "IdleStyle" -hide_banner,, Hide
+	Run, ..\..\..\..\CoreData\IdleStyle\ffplay "%VidPath%" -left %MonLeft% -top %MonTop% -x %MonitorWidth% -y %MonitorHeight% -loop %LoopBool% -window_title "IdleStyle" -hide_banner,, Hide
 }
 else
 {
-	Run, ffplay "%VidPath%" -left %MonLeft% -top %MonTop% -loop %LoopBool% -window_title "IdleStyle" -hide_banner -an,, Hide
+	Run, ..\..\..\..\CoreData\IdleStyle\ffplay "%VidPath%" -left %MonLeft% -top %MonTop% -x %MonitorWidth% -y %MonitorHeight% -loop %LoopBool% -window_title "IdleStyle" -hide_banner -an,, Hide
 }
 WinWait, IdleStyle
 WinSet, AlwaysOnTop, On, IdleStyle

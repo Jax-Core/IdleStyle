@@ -17,9 +17,8 @@ W=(650*[Set.S])
 H=(150*[Set.S])
 ImageName=#SKINSPATH##Skin.Name#\Core\Animation\#CURRENTSECTIOn#.png
 DynamicVariables=1
-ImageAlpha=100
-MouseOverAction=[!SetOption #CURRENTSECTION# ImageAlpha "200"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageAlpha "100"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+; MouseOverAction=[!SetOption #CURRENTSECTION# H "(155*[Set.S])"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+; MouseLeaveAction=[!SetOption #CURRENTSECTION# H "(150*[Set.S])"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 Leftmouseupaction=[!WriteKeyValue Variables Style "#CURRENTSECTION#" "#Sec.SaveLocatioN#"][!UpdateMeasure Auto_Refresh:M][!Refresh]
 Rightmouseupaction=[!WriteKeyValue Variables PreviewStyle "#CURRENTSECTION#" "#SKINSPATH##Skin.Name#\Launch\Preview.ini"][!ActivateConfig "IdleStyle\Launch" "Preview.ini"]
 PreserveAspectRatio=2
@@ -52,11 +51,15 @@ X=r
 Y=(30*[Set.S])R
 MeterStyle=Select:S
 
-[Ninety]
+[JD]
 Meter=Image
 MeterStyle=Select:S
 
-[JD]
+[String]
+Meter=Image
+MeterStyle=Select:S
+
+[Ninety]
 Meter=Image
 MeterStyle=Select:S
 
