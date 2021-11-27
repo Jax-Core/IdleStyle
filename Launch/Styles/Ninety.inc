@@ -55,6 +55,10 @@ Left=([#SCREENAREAWIDTH@#Location#]*(1-#TweenNode1#)),0 | LineTo ([#SCREENAREAWI
 Right=0,([#SCREENAREAHEIGHT@#Location#]+#Dis#) | LineTo ([#SCREENAREAWIDTH@#Location#]*(#TweenNode1#)),[#SCREENAREAHEIGHT@#Location#] | LineTo ([#SCREENAREAWIDTH@#Location#]*(#TweenNode1#)),(-1*([#SCREENAREAHEIGHT@#Location#]/[#SCREENAREAWIDTH@#Location#]*([#SCREENAREAWIDTH@#Location#]*(#TweenNode1#))-[#SCREENAREAHEIGHT@#Location#])+#Dis#)
 Group=Tweenable
 DynamicVariables=1
+[Dum]
+Meter=String
+SolidColor=#Color3#
+UpdatteDivider=-1
 
 [TextIcon]
 Meter=String

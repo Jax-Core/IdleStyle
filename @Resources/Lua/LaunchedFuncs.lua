@@ -11,6 +11,18 @@ function disp_time(time)
     end
 end
 
+function moveAndAlign()
+    -- if SKIN:GetVariable('StretchFrom') == 'L' then
+    SKIN:Bang('!Move', SKIN:ReplaceVariables('[#SCREENAREAX@#Location#]'), SKIN:ReplaceVariables('[#SCREENAREAY@#Location#]'))
+    print('Aligning left')
+    -- else
+    --     local Location = tonumber(SKIN:GetVariable('Location')) + tonumber(SKIN:GetVariable('Stretch'))
+    --     SKIN:Bang('!Move', SKIN:ReplaceVariables('[#SCREENAREAX@'..Location..']'), SKIN:ReplaceVariables('[#SCREENAREAY@'..Location..']'))
+    --     -- SKIN:Bang('!Move 1920 0')
+    --     print('Aligning right')
+    -- end
+end
+
 function Initialize()
     local Style = SKIN:GetVariable('Style')
     local index = tonumber(SKIN:GetVariable('Location'))
@@ -21,6 +33,7 @@ function Initialize()
         Group = SKIN:GetVariable('Group')
         SkinRow = SKIN:GetVariable('SkinRow')
     end
+    -- ------------------------- if style is transparent ------------------------ --
     if Style == 'Center' or Style == 'CustomGroup' or Style == 'JD' then
 
         local width = 0
@@ -32,7 +45,8 @@ function Initialize()
         SKIN:Bang('!UpdateMeter', 'Dum')
         SKIN:Bang('!Redraw')
     end
-    if Style == 'CoreUI' or Style == 'String' then
+    -- --------------------------- if style is oquaqe --------------------------- --
+    if Style == 'CoreUI' or Style == 'String' or Style == 'Ninety' then
 
         local width = 0
         for i=(index+1), (stretch+1) do 

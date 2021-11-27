@@ -187,7 +187,7 @@ Y=([Option15:Y]-#Set.P#+(-20/2+8)*[Set.S])
 Meter=Shape
 Shape2=Rectangle ([&Func:returnBool('IconStyle', 'Color')] = 0 ? 0 : (150*[Set.S])),0,(150*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0 |
 0Act=[!WriteKeyValue Variables IconStyle "Mono" "#Sec.SaveLocation#"]
-1Act=[!WriteKeyValue Variables IconStyle "Metric" "#Sec.SaveLocation#"]
+1Act=[!WriteKeyValue Variables IconStyle "Color" "#Sec.SaveLocation#"]
 MeterStyle=Set.Pick:S
 Y=([Option16:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [IconStyle:0]
