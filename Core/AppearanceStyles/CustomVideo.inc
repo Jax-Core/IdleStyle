@@ -49,13 +49,13 @@ MeterStyle=Set.Div:S
 Meter=String
 Text=Video sound
 MeterStyle=Set.String:S | Set.OptionName:S
-; [Set.Div:S1911413s138]
-; Meter=Shape
-; MeterStyle=Set.Div:S
-; [Option05]
-; Meter=String
-; Text=Color 2
-; MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:S1913123123s138]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option04]
+Meter=String
+Text=Extended background color
+MeterStyle=Set.String:S | Set.OptionName:S
 
 ; ---------------------------------------------------------------------------- ;
 ;                                   Function                                   ;
@@ -111,3 +111,11 @@ Meter=Shape
 MeterStyle=Set.Bool:S
 Y=([Option03:Y]-#Set.P#+(-20/2+8)*[Set.S])
 
+[Background]
+Meter=Shape
+MeterStyle=Set.ColorPacity:S
+Y=([Option04:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Value04]
+Meter=String
+Text=#BackgroundOpacity#
+MeterStyle=Set.String:S | Set.Pacity:S

@@ -8,5 +8,8 @@ YoutubeState=1
 Dev=0
 Location=1
 Stretch=0
+Align=1
+Blur=None
+BackgroundOpacity=255
 
-Style=JD
+Style=Ninety

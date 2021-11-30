@@ -30,6 +30,13 @@ MeterStyle=Set.Div:S
 Meter=String
 Text=Amount of screens to stretch horizontally
 MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:1231123]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option13]
+Meter=String
+Text=Alignment of screensaver
+MeterStyle=Set.String:S | Set.OptionName:S
 
 [Time]
 Meter=String
@@ -94,7 +101,7 @@ MeterStyle=Set.String:S | Set.Value:S
 Meter=Shape
 MeterStyle=Set.Textbox:S
 Y=([Option11:Y]-#Set.P#+(-30/2+8)*[Set.S])
-Type=Int|1|100
+Type=Int|1|10
 [Value11]
 Meter=String
 Text=#Location#
@@ -104,11 +111,31 @@ MeterStyle=Set.String:S | Set.Value:S
 Meter=Shape
 MeterStyle=Set.Textbox:S
 Y=([Option12:Y]-#Set.P#+(-30/2+8)*[Set.S])
-Type=Int|0|2
+Type=Int|0|10
 [Value12]
 Meter=String
 Text=#Stretch#
 MeterStyle=Set.String:S | Set.Value:S
+
+[Align:]
+Meter=Shape
+Shape2=Rectangle ([&Func:returnBool('Align', '-1')] = 0 ? 0 : (150*[Set.S])),0,(150*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0 |
+0Act=[!WriteKeyValue Variables Align "1" "#Sec.SaveLocation#"]
+1Act=[!WriteKeyValue Variables Align "-1" "#Sec.SaveLocation#"][!WriteKeyValue Variables Location "(#Location# = 1 ? 2 : #Location#)" "#Sec.SaveLocation#"]
+MeterStyle=Set.Pick:S
+Y=([Option13:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Align:0]
+Meter=String
+Text=Left
+FontColor=([&Func:returnBool('Align', '-1')] = 0 ? 0 : 255),([&Func:returnBool('Align', '-1')] = 0 ? 0 : 255),([&Func:returnBool('Align', '-1')] = 0 ? 0 : 255)
+LeftMouseUpAction=[&Func:GroupVar('#CURRENTSECTION#', '0Act')][!Refresh][!UpdateMeasure Auto_Refresh:M]
+MeterStyle=Set.String:S | Set.PickOption_0:S
+[Align:1]
+Meter=String
+Text=Right
+FontColor=([&Func:returnBool('Align', '-1')] = 1 ? 0 : 255),([&Func:returnBool('Align', '-1')] = 1 ? 0 : 255),([&Func:returnBool('Align', '-1')] = 1 ? 0 : 255)
+LeftMouseUpAction=[&Func:GroupVar('#CURRENTSECTION#', '1Act')][!Refresh][!UpdateMeasure Auto_Refresh:M]
+MeterStyle=Set.String:S | Set.PickOption_1:S
 
 [2412:]
 Meter=Shape

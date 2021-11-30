@@ -18,15 +18,12 @@ UpdateDivider=1
 ActionList1=StartVideo | Hide
 ActionList2=EndVideo | Deactivate
 Hide=[!Hide]
-Deactivate=[!DeactivateConfig]
+Deactivate=[!DeactivateConfig "IdleStyle\Launch\Addons\Extender"][!DeactivateConfig]
 StartVideo=["#@#Actions\AHKv1.exe" "#@#Actions\Source code\FadeIn.ahk"]
 EndVideo=["#@#Actions\AHKv1.exe" "#@#Actions\Source code\FadeOut.ahk"]
 [mPreview]
 ActionList2=StartVideo | Wait 5000 | EndVideo | Deactivate
-Deactivate=[!DeactivateConfig]
+Deactivate=[!DeactivateConfig "IdleStyle\Launch\Addons\Extender"][!DeactivateConfig]
 ; StartVideo=[!CommandMeasure CommandVideo#Sound# "Run"]["#@#Actions\AHKv1.exe" "#@#Actions\Source code\FadeIn.ahk"]
 StartVideo=["#@#Actions\AHKv1.exe" "#@#Actions\Source code\FadeIn.ahk"]
 EndVideo=["#@#Actions\AHKv1.exe" "#@#Actions\Source code\FadeOut.ahk"]
-
-[Dum]
-Meter=String

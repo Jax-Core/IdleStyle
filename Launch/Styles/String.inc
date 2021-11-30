@@ -81,10 +81,6 @@ ImageName=#ImagePath#
 [ImageMask:0]
 Hidden=1
 ImageName=
-[Dum]
-Meter=String
-SolidColor=#BackgroundColor#
-UpdatteDivider=-1
 
 [Bcon]
 Meter=Shape

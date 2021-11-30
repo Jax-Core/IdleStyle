@@ -49,6 +49,13 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:S1911413s138]
 Meter=Shape
 MeterStyle=Set.Div:S
+[Option045]
+Meter=String
+Text=Extended background color
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:S19114113s138]
+Meter=Shape
+MeterStyle=Set.Div:S
 [Option05]
 Meter=String
 Text=Shadow / glow color
@@ -109,7 +116,15 @@ MeterStyle=Set.String:S | Set.Value:S
 Meter=Shape
 MeterStyle=Set.Color:S
 Y=([Option04:Y]-#Set.P#+(-30/2+8)*[Set.S])
-LeftMOuseupAction=["#@#Addons\RainRGB4.exe" "VarName=#CURRENTSECTION#" "FileName=#Sec.SaveLocation#" "RefreshConfig=#CURRENTCONFIG#"]
+
+[Background]
+Meter=Shape
+MeterStyle=Set.ColorPacity:S
+Y=([Option045:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Value045]
+Meter=String
+Text=#BackgroundOpacity#
+MeterStyle=Set.String:S | Set.Pacity:S
 
 [Color2]
 Meter=Shape

@@ -7,6 +7,7 @@ Scale=([#SCREENAREAWIDTH@#Location#]/1920)
 Meter=String
 X=0
 Y=0
+W=[#SCREENAREAWIDTH@#Location#]
 H=[#SCREENAREAHEIGHT@#Location#]
 SolidColor=#BackgroundColor#,#BackgroundOpacity#
 UpdatteDivider=-1

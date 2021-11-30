@@ -50,15 +50,11 @@ UpdateDivider=1
 [B]
 Meter=Shape
 Shape=Path left | Fill Color #Color1# | StrokeWidth 1 | Stroke Color #Color1#
-Shape2=Path Right | Fill Color #Color3# | StrokeWidth 1 | Stroke Color #Color3#
+Shape2=Path Right | Fill Color #Color2# | StrokeWidth 1 | Stroke Color #Color2#
 Left=([#SCREENAREAWIDTH@#Location#]*(1-#TweenNode1#)),0 | LineTo ([#SCREENAREAWIDTH@#Location#]*(1-#TweenNode1#)),(-1*([#SCREENAREAHEIGHT@#Location#]/[#SCREENAREAWIDTH@#Location#]*([#SCREENAREAWIDTH@#Location#]*(1-#TweenNode1#))-[#SCREENAREAHEIGHT@#Location#])+#Dis#) | LineTo ([#SCREENAREAWIDTH@#Location#]),#Dis# | LineTo ([#SCREENAREAWIDTH@#Location#]),0
 Right=0,([#SCREENAREAHEIGHT@#Location#]+#Dis#) | LineTo ([#SCREENAREAWIDTH@#Location#]*(#TweenNode1#)),[#SCREENAREAHEIGHT@#Location#] | LineTo ([#SCREENAREAWIDTH@#Location#]*(#TweenNode1#)),(-1*([#SCREENAREAHEIGHT@#Location#]/[#SCREENAREAWIDTH@#Location#]*([#SCREENAREAWIDTH@#Location#]*(#TweenNode1#))-[#SCREENAREAHEIGHT@#Location#])+#Dis#)
 Group=Tweenable
 DynamicVariables=1
-[Dum]
-Meter=String
-SolidColor=#Color3#
-UpdatteDivider=-1
 
 [TextIcon]
 Meter=String
