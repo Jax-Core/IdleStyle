@@ -1,3 +1,13 @@
+function Initialize()
+    local Style = SKIN:GetVariable('Style')
+    if Style == 'CustomGroup' then
+        _, t = SKIN:GetVariable('SkinRow'):gsub("|", "|")
+        t = t + 1
+        Group = SKIN:GetVariable('Group')
+        SkinRow = SKIN:GetVariable('SkinRow')
+    end
+end
+
 function disp_time(time)
     local hours = math.floor(time % 86400 / 3600)
     local minutes = math.floor(time % 3600 / 60)
@@ -12,53 +22,47 @@ function disp_time(time)
 end
 
 function moveAndAlign()
-    -- if SKIN:GetVariable('StretchFrom') == 'L' then
-    SKIN:Bang('!Move', SKIN:ReplaceVariables('[#SCREENAREAX@#Location#]'), SKIN:ReplaceVariables('[#SCREENAREAY@#Location#]'))
-    print('Aligning left')
-    -- else
-    --     local Location = tonumber(SKIN:GetVariable('Location')) + tonumber(SKIN:GetVariable('Stretch'))
-    --     SKIN:Bang('!Move', SKIN:ReplaceVariables('[#SCREENAREAX@'..Location..']'), SKIN:ReplaceVariables('[#SCREENAREAY@'..Location..']'))
-    --     -- SKIN:Bang('!Move 1920 0')
-    --     print('Aligning right')
-    -- end
-end
-
-function Initialize()
+    local function set(...)
+        local ret = {}
+        for _,k in ipairs({...}) do ret[k] = true end
+        return ret
+     end     
     local Style = SKIN:GetVariable('Style')
-    local index = tonumber(SKIN:GetVariable('Location'))
-    local stretch = tonumber(SKIN:GetVariable('stretch'))
-    if Style == 'CustomGroup' then
-        _, t = SKIN:GetVariable('SkinRow'):gsub("|", "|")
-        t = t + 1
-        Group = SKIN:GetVariable('Group')
-        SkinRow = SKIN:GetVariable('SkinRow')
-    end
+    local index = tonumber(SKIN:GetVariable('Location')) -- index is the origin point
+    local stretch = tonumber(SKIN:GetVariable('stretch')) -- stretch is an addition value
+    local align = tonumber(SKIN:GetVariable('Align')) -- align is a directional value
+    local posX = 0
+    local posY = 0
+    local filW = 0
+    local filH = 0
+
+    local init = 0
     -- ------------------------- if style is transparent ------------------------ --
-    if Style == 'Center' or Style == 'CustomGroup' or Style == 'JD' then
-
-        local width = 0
-        for i=index, (stretch + index) do 
-            width = width + SKIN:GetVariable('SCREENAREAWIDTH@'..i)
-        end
-
-        SKIN:Bang('!SetOption', 'Dum', 'W', width)
-        SKIN:Bang('!UpdateMeter', 'Dum')
-        SKIN:Bang('!Redraw')
+    if set('CustomGroup', 'JD')[Style] then
+        SKIN:Bang('!ZPos', '1')
+        init = init
     end
     -- --------------------------- if style is oquaqe --------------------------- --
-    if Style == 'CoreUI' or Style == 'String' or Style == 'Ninety' then
-
-        local width = 0
-        for i=(index+1), (stretch+1) do 
-            width = width + SKIN:GetVariable('SCREENAREAWIDTH@'..i)
-        end
-        SKIN:Bang('!SetOption', 'Dum', 'W', width)
-        SKIN:Bang('!SetOption', 'Dum', 'H', SKIN:GetVariable('SCREENAREAHEIGHT@'..(index+1)))
-        SKIN:Bang('!SetOption', 'Dum', 'X', SKIN:GetVariable('SCREENAREAX@'..(index+1)))
-        SKIN:Bang('!SetOption', 'Dum', 'Y', SKIN:GetVariable('SCREENAREAY@'..(index+1)))
-        SKIN:Bang('!UpdateMeter', 'Dum')
-        SKIN:Bang('!Redraw')
+    if set('CoreUI', 'String', 'Ninety', 'Center', 'CustomVideo', 'CustomPaper')[Style] then
+        SKIN:Bang('!ZPos', '2')
+        init = 1
     end
+    posX = SKIN:GetVariable('SCREENAREAX@'..index + align * init)
+    local posYarray = {}
+    local filHarray = {}
+    for i=init,stretch  do
+        table.insert(posYarray, SKIN:GetVariable('SCREENAREAY@'..index + align * i))
+        filW = filW + SKIN:GetVariable('SCREENAREAWIDTH@'..index + align * i)
+        table.insert(filHarray, SKIN:GetVariable('SCREENAREAHEIGHT@'..index + align * i))
+    end
+    posY = math.max(unpack(posYarray)) 
+    filH = math.max(unpack(filHarray)) 
+    SKIN:Bang('!SetOption', 'Filler', 'X', posX)
+    SKIN:Bang('!SetOption', 'Filler', 'Y', posY)
+    SKIN:Bang('!SetOption', 'Filler', 'W', filW)
+    SKIN:Bang('!SetOption', 'Filler', 'H', filH)
+    SKIN:Bang('!UpdateMeter', 'Filler')
+    SKIN:Bang('!Redraw')
 end
 
 function Separate(str)

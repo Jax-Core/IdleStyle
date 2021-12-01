@@ -8,3 +8,5 @@ Color1=255,255,255
 Color2Color=0,0,0
 Color2Opacity=255
 Color2BlurIntensity=7
+BackgroundColor=17,17,17
+BackgroundOpacity=150

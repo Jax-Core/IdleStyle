@@ -38,14 +38,21 @@ Meter=Shape
 MeterStyle=Set.Div:S
 [Option04]
 Meter=String
-Text=Background color
+Text=Left shade color
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:S1911413s138]
 Meter=Shape
 MeterStyle=Set.Div:S
 [Option05]
 Meter=String
-Text=Secondary background color
+Text=Right shade color
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:S112911413s138]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option06]
+Meter=String
+Text=Extended background color
 MeterStyle=Set.String:S | Set.OptionName:S
 
 ; ---------------------------------------------------------------------------- ;
@@ -94,4 +101,9 @@ LeftMOuseupAction=["#@#Addons\RainRGB4.exe" "VarName=#CURRENTSECTION#" "FileName
 Meter=Shape
 MeterStyle=Set.Color:S
 Y=([Option05:Y]-#Set.P#+(-30/2+8)*[Set.S])
+LeftMOuseupAction=["#@#Addons\RainRGB4.exe" "VarName=#CURRENTSECTION#" "FileName=#Sec.SaveLocation#" "RefreshConfig=#CURRENTCONFIG#"]
+[BackgroundColor]
+Meter=Shape
+MeterStyle=Set.Color:S
+Y=([Option06:Y]-#Set.P#+(-30/2+8)*[Set.S])
 LeftMOuseupAction=["#@#Addons\RainRGB4.exe" "VarName=#CURRENTSECTION#" "FileName=#Sec.SaveLocation#" "RefreshConfig=#CURRENTCONFIG#"]

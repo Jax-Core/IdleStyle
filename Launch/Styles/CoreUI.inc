@@ -59,10 +59,6 @@ Left=0,0 | LineTo 0,[#SCREENAREAHEIGHT@#Location#] | LineTo ([#SCREENAREAWIDTH@#
 Right=([#SCREENAREAWIDTH@#Location#]),([#SCREENAREAHEIGHT@#Location#]) | LineTo ([#SCREENAREAWIDTH@#Location#]),0 | LineTo ([#SCREENAREAWIDTH@#Location#]*(1-#TweenNode1#)),0 | LineTo ([#SCREENAREAWIDTH@#Location#]),([#SCREENAREAHEIGHT@#Location#])
 Group=Tweenable
 DynamicVariables=1
-[Dum]
-Meter=String
-SolidColor=#Color2#
-UpdatteDivider=-1
 
 [Image]
 MEter=Image
