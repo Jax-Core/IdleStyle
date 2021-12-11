@@ -103,6 +103,30 @@ MeterStyle=Set.String:S | Set.OptionName:S
 ;                                     Input                                    ;
 ; ---------------------------------------------------------------------------- ;
 
+[Info:IdleTiming]
+Meter=Shape
+MeterStyle=Set.RectButton:S
+Y=([IdleTiming:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Info01]
+Meter=String
+MeterStyle=Set.String:S | Set.Icon:S
+
+[Info:Position]
+Meter=Shape
+MeterStyle=Set.RectButton:S
+Y=([Position:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Info02]
+Meter=String
+MeterStyle=Set.String:S | Set.Icon:S
+
+[Info:Checks]
+Meter=Shape
+MeterStyle=Set.RectButton:S
+Y=([Checks:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Info03]
+Meter=String
+MeterStyle=Set.String:S | Set.Icon:S
+
 [Button01]
 Meter=Shape
 MeterStyle=Set.Button:S
@@ -240,30 +264,6 @@ Meter=Shape
 MeterStyle=Set.Bool:S
 Hidden=(1-#YoutubeCheck#)
 Y=([Option33:Y]-#Set.P#+(-20/2+8)*[Set.S])
-
-[Info:IdleTiming]
-Meter=Shape
-MeterStyle=Set.RectButton:S
-Y=([IdleTiming:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[Info01]
-Meter=String
-MeterStyle=Set.String:S | Set.Icon:S
-
-[Info:Position]
-Meter=Shape
-MeterStyle=Set.RectButton:S
-Y=([Position:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[Info02]
-Meter=String
-MeterStyle=Set.String:S | Set.Icon:S
-
-[Info:Checks]
-Meter=Shape
-MeterStyle=Set.RectButton:S
-Y=([Checks:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[Info03]
-Meter=String
-MeterStyle=Set.String:S | Set.Icon:S
 
 
 @includeKeys=#SKINSPATH##Skin.Name#\@Resources\Actions\HotKeys.ini
