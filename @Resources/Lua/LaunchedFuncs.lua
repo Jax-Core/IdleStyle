@@ -22,47 +22,58 @@ function disp_time(time)
 end
 
 function moveAndAlign()
-    local function set(...)
-        local ret = {}
-        for _,k in ipairs({...}) do ret[k] = true end
-        return ret
-     end     
-    local Style = SKIN:GetVariable('Style')
-    local index = tonumber(SKIN:GetVariable('Location')) -- index is the origin point
-    local stretch = tonumber(SKIN:GetVariable('stretch')) -- stretch is an addition value
-    local align = tonumber(SKIN:GetVariable('Align')) -- align is a directional value
-    local posX = 0
-    local posY = 0
-    local filW = 0
-    local filH = 0
+    if tonumber(SKIN:GetVariable('SmartOverlayDetection')) == 1 then
+        local function set(...)
+            local ret = {}
+            for _,k in ipairs({...}) do ret[k] = true end
+            return ret
+        end     
+        local Style = SKIN:GetVariable('Style')
+        local index = tonumber(SKIN:GetVariable('Location')) -- index is the origin point
+        local stretch = tonumber(SKIN:GetVariable('stretch')) -- stretch is an addition value
+        local align = tonumber(SKIN:GetVariable('Align')) -- align is a directional value
+        local posX = 0
+        local posY = 0
+        local filW = 0
+        local filH = 0
 
-    local init = 0
-    -- ------------------------- if style is transparent ------------------------ --
-    if set('CustomGroup', 'JD')[Style] then
-        SKIN:Bang('!ZPos', '1')
-        init = init
+        local init = 0
+        -- ------------------------- if style is transparent ------------------------ --
+        if set('CustomGroup', 'JD')[Style] then
+            SKIN:Bang('!ZPos', '1')
+            init = init
+        end
+        -- --------------------------- if style is oquaqe --------------------------- --
+        if set('CoreUI', 'String', 'Ninety', 'Center', 'CustomVideo', 'CustomPaper')[Style] then
+            SKIN:Bang('!ZPos', '2')
+            init = 1
+        end
+        posX = SKIN:GetVariable('SCREENAREAX@'..index + align * init)
+        local posYarray = {}
+        local filHarray = {}
+        for i=init,stretch  do
+            table.insert(posYarray, SKIN:GetVariable('SCREENAREAY@'..index + align * i))
+            filW = filW + SKIN:GetVariable('SCREENAREAWIDTH@'..index + align * i)
+            table.insert(filHarray, SKIN:GetVariable('SCREENAREAHEIGHT@'..index + align * i))
+        end
+        if stretch ~= 0 then
+            posY = math.max(unpack(posYarray)) 
+            filH = math.max(unpack(filHarray)) 
+            SKIN:Bang('[!Move 0 0]')
+            SKIN:Bang('!SetOption', 'Filler', 'X', posX)
+            SKIN:Bang('!SetOption', 'Filler', 'Y', posY)
+            SKIN:Bang('!SetOption', 'Filler', 'W', filW)
+            SKIN:Bang('!SetOption', 'Filler', 'H', filH)
+            SKIN:Bang('!UpdateMeter', 'Filler')
+            SKIN:Bang('!Redraw')
+        end
+    else
+        SKIN:Bang('[!Move '..SKIN:GetVariable('WindowX')..' '..SKIN:GetVariable('WindowY')..']')
+        SKIN:Bang('!SetOption', 'Filler', 'W', SKIN:GetVariable('WindowW'))
+        SKIN:Bang('!SetOption', 'Filler', 'H', SKIN:GetVariable('WindowH'))
+        SKIN:Bang('!UpdateMeter', 'Filler')
+        SKIN:Bang('!Redraw')
     end
-    -- --------------------------- if style is oquaqe --------------------------- --
-    if set('CoreUI', 'String', 'Ninety', 'Center', 'CustomVideo', 'CustomPaper')[Style] then
-        SKIN:Bang('!ZPos', '2')
-        init = 1
-    end
-    posX = SKIN:GetVariable('SCREENAREAX@'..index + align * init)
-    local posYarray = {}
-    local filHarray = {}
-    for i=init,stretch  do
-        table.insert(posYarray, SKIN:GetVariable('SCREENAREAY@'..index + align * i))
-        filW = filW + SKIN:GetVariable('SCREENAREAWIDTH@'..index + align * i)
-        table.insert(filHarray, SKIN:GetVariable('SCREENAREAHEIGHT@'..index + align * i))
-    end
-    posY = math.max(unpack(posYarray)) 
-    filH = math.max(unpack(filHarray)) 
-    SKIN:Bang('!SetOption', 'Filler', 'X', posX)
-    SKIN:Bang('!SetOption', 'Filler', 'Y', posY)
-    SKIN:Bang('!SetOption', 'Filler', 'W', filW)
-    SKIN:Bang('!SetOption', 'Filler', 'H', filH)
-    SKIN:Bang('!UpdateMeter', 'Filler')
-    SKIN:Bang('!Redraw')
 end
 
 function Separate(str)

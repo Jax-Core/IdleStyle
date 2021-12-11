@@ -1,3 +1,6 @@
+forced = 0
+forcedTime = 0
+
 function CheckPause()
     -- ------------------------ if checking youtube is on ----------------------- --
     if tonumber(SKIN:GetVariable('YoutubeCheck')) == 1 then
@@ -43,14 +46,35 @@ function CheckPause()
 end
 
 function Update()
-    local TimeOutRequirement = parseDuration(SKIN:GetVariable('TimeOut'))
+    TimeOutRequirement = parseDuration(SKIN:GetVariable('TimeOut'))
     if enabled == nil then enabled = 0 end
     if TimeOutRequirement <= SKIN:GetMeasure('Idletime'):GetValue() and enabled == 0 and SKIN:GetMeasure('mToggle'):GetValue() == 1 then
         SKIN:Bang('!ActivateConfig', 'IdleStyle\\Launch', 'Main.ini')
         enabled = 1
-    elseif TimeOutRequirement > SKIN:GetMeasure('Idletime'):GetValue() and enabled == 1 then
+    elseif TimeOutRequirement > SKIN:GetMeasure('Idletime'):GetValue() and enabled == 1 and forced == 0 then
         enabled = 0
+        SKIN:Bang('!CommandMeasure', 'mActions', 'Execute 2', 'IdleStyle\\Launch', 'Main.ini')
     end
+    if forced == 1 then
+        forcedTime = forcedTime + 1
+        if forcedTime > TimeOutRequirement then
+            forced = 0
+            forcedTime = 0
+        end
+        if forcedTime > 3 and SKIN:GetMeasure('Idletime'):GetValue() == 0 then
+            forced = 0
+            forcedTime = 0
+            enabled = 0
+            SKIN:Bang('!CommandMeasure', 'mActions', 'Execute 2', 'IdleStyle\\Launch', 'Main.ini')
+        end
+    end
+    -- print('ForcedTime:'..forcedTime..' | Enabled:'..enabled..' | Forced?'..forced..' | IdleTime'..SKIN:GetMeasure('Idletime'):GetValue()..' | TimeOutRequirement:'..TimeOutRequirement)
+end
+
+function Force()
+    forced = 1
+    enabled = 1
+    SKIN:Bang('!ActivateConfig', 'IdleStyle\\Launch', 'Main.ini')
 end
 
 function disp_time(time)

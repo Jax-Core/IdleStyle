@@ -12,4 +12,11 @@ Align=1
 Blur=None
 BackgroundOpacity=255
 
-Style=Ninety
+Style=String
+
+SmartOverlayDetection=0
+WindowX=865
+WindowY=442
+WindowW=855
+WindowH=547
+UseCustomOverlay=1
