@@ -14,7 +14,7 @@ BackgroundOpacity=255
 
 Style=String
 
-SmartOverlayDetection=0
+SmartOverlayDetection=1
 WindowX=865
 WindowY=442
 WindowW=855
