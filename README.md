@@ -22,9 +22,11 @@ Rainmeter 4.5 or newer: [Download here](https://www.rainmeter.net/)
 1. A start screen should pop up. If the JaxCore option is red, please press it and it'll install the core automatically. You can manually install if it fails by vising the Core repo.
 
 ### Custom video style setup instructions
-1. You'll have to manually download ffplay from [here](https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2021-11-19-12-21/ffmpeg-n4.4.1-2-gcc33e73618-win64-lgpl-4.4.zip) in order for this style to function.
-2. After download, uncompress the file and navigate to the bin folder. Copy ffplay.exe and paste it to the CoreData folder, located in `Documents\Rainmeter`.
-3. Refresh the core page and the availability indicator should show as available after that. You can now add your own videos into IdleStyle and have it display then!
+-  You'll have to manually download ffplay from [here](https://github.com/BtbN/FFmpeg-Builds/releases) 's `ffmpeg-master-latest-win64-lgpl.zip` in order for this style to function.
+1. Select the video style first from the animation tab in IdleStyle's core page.
+2. Navigate to the appearance tab
+3. After download, uncompress the file and navigate to the bin folder. Copy ffplay.exe and paste it to the CoreData folder, located in `Documents\Rainmeter`.
+4. Refresh the core page and the availability indicator should show as available after that. You can now add your own videos into IdleStyle and have it display then!
  
 ## Contact me
 Join the discord server! https://discord.gg/JmgehPSDD6
