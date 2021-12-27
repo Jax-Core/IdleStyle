@@ -40,7 +40,7 @@ Meter=Shape
 MeterStyle=Set.Div:S
 [Option02]
 Meter=String
-Text=Loop video
+Text=Play video once only
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:S1913s12331138]
 Meter=Shape
@@ -103,8 +103,6 @@ MeterStyle=Set.String:S | Set.Value:S
 Meter=Shape
 MeterStyle=Set.Bool:S
 Y=([Option02:Y]-#Set.P#+(-20/2+8)*[Set.S])
-Shape2=Ellipse ([##CURRENTSECTION#] = 0 ? (40*[Set.S]) : (10*[Set.S])),(10*[Set.S]),(6*[Set.S]) | StrokeWidth 0 | Fill Color #Set.Text_Color#
-Fill=Fill Color ([##CURRENTSECTION#] = 0 ? 35 : 181),([##CURRENTSECTION#] = 0 ? 209 : 181),([##CURRENTSECTION#] = 0 ? 96 : 181)
 
 [Sound]
 Meter=Shape

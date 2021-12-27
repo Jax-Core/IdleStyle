@@ -1,5 +1,5 @@
 [Variables]
-TimeOut=1m
+TimeOut=5m
 2412=I
 
 FullScreenCheck=0
@@ -12,7 +12,7 @@ Align=1
 Blur=None
 BackgroundOpacity=255
 
-Style=String
+Style=CoreUI
 
 SmartOverlayDetection=1
 WindowX=865

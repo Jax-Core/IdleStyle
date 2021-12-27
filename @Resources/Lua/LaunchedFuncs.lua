@@ -40,12 +40,9 @@ function moveAndAlign()
         local init = 0
         -- ------------------------- if style is transparent ------------------------ --
         if set('CustomGroup', 'JD')[Style] then
-            SKIN:Bang('!ZPos', '1')
-            init = init
         end
         -- --------------------------- if style is oquaqe --------------------------- --
         if set('CoreUI', 'String', 'Ninety', 'Center', 'CustomVideo', 'CustomPaper')[Style] then
-            SKIN:Bang('!ZPos', '2')
             init = 1
         end
         posX = SKIN:GetVariable('SCREENAREAX@'..index + align * init)
@@ -56,17 +53,15 @@ function moveAndAlign()
             filW = filW + SKIN:GetVariable('SCREENAREAWIDTH@'..index + align * i)
             table.insert(filHarray, SKIN:GetVariable('SCREENAREAHEIGHT@'..index + align * i))
         end
-        if stretch ~= 0 then
-            posY = math.max(unpack(posYarray)) 
-            filH = math.max(unpack(filHarray)) 
-            SKIN:Bang('[!Move 0 0]')
-            SKIN:Bang('!SetOption', 'Filler', 'X', posX)
-            SKIN:Bang('!SetOption', 'Filler', 'Y', posY)
-            SKIN:Bang('!SetOption', 'Filler', 'W', filW)
-            SKIN:Bang('!SetOption', 'Filler', 'H', filH)
-            SKIN:Bang('!UpdateMeter', 'Filler')
-            SKIN:Bang('!Redraw')
-        end
+        posY = math.max(unpack(posYarray)) 
+        filH = math.max(unpack(filHarray)) 
+        SKIN:Bang('[!Move 0 0]')
+        SKIN:Bang('!SetOption', 'Filler', 'X', posX)
+        SKIN:Bang('!SetOption', 'Filler', 'Y', posY)
+        SKIN:Bang('!SetOption', 'Filler', 'W', filW)
+        SKIN:Bang('!SetOption', 'Filler', 'H', filH)
+        SKIN:Bang('!UpdateMeter', 'Filler')
+        SKIN:Bang('!Redraw')
     else
         SKIN:Bang('[!Move '..SKIN:GetVariable('WindowX')..' '..SKIN:GetVariable('WindowY')..']')
         SKIN:Bang('!SetOption', 'Filler', 'W', SKIN:GetVariable('WindowW'))
