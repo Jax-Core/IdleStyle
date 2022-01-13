@@ -12,7 +12,7 @@ Align=1
 Blur=None
 BackgroundOpacity=255
 
-Style=CoreUI
+Style=JD
 
 SmartOverlayDetection=1
 WindowX=865
