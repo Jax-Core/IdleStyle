@@ -50,9 +50,9 @@
 
 ## About
 
-https://user-images.githubusercontent.com/80020581/135605193-383f546f-252e-4717-a38b-431e3d6fcdf8.mp4
+![IdleStyle](https://user-images.githubusercontent.com/80020581/143574887-e6e32c3d-3100-4ad8-91d8-f1f8cb612ced.png)
 
-ValliStart is a Rainmeter skin that replaces the standard Windows start menu with an animated, fancy control center. ValliStart includes 8 different color schemes as well as 15+ customization options for you to tweak and customize to your liking. **See the video linked above.**
+IdleStyle is a Rainmeter skin that offers fully customizable screensavers with custom animation support. Custom animations can be used to display a range of things such as skins, images, and videos. If you want people to notice the fancy side of your desktop, this is a must-have!
 
 ## Features
 
@@ -70,7 +70,7 @@ ValliStart is a Rainmeter skin that replaces the standard Windows start menu wit
 
 ### Installation
 
-Assuming you successfully downloaded and installed Rainmeter as well as JaxCore, you can now proceed to install ValliStart by following the steps below.
+Assuming you successfully downloaded and installed Rainmeter as well as JaxCore, you can now proceed to install IdleStyle by following the steps below.
 
 1. Download and run the `.rmskin` file for **IdleStyle** from the official [JaxCore site](https://jax-core.github.io/) to install **IdleStyle**.
 2. Leave the installation settings at their defaults and click Install.
@@ -80,7 +80,7 @@ Assuming you successfully downloaded and installed Rainmeter as well as JaxCore,
 
 ## Custom Animations Setup
 
-Now that you've installed and setup ValliStart, let's begin setting up some modules it comes with!
+Now that you've installed and setup IdleStyle, let's begin setting up some modules it comes with!
 
 ### Static Backgrounds
 
