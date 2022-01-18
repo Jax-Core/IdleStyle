@@ -41,7 +41,7 @@
         <li><a href="#static-backgrounds">Static Backgrounds</a></li>
         <li><a href="#video-backgrounds">Video Backgrounds</a>
           <ul>
-            <li><a href="#installing-ffmpeg">Configuring ffplay</a></li>
+            <li><a href="#configuring-ffplay">Configuring ffplay</a></li>
             <li><a href="#setting-up-the-video-background">Setting up the video background</a></li>
           </ul>
         </li>
