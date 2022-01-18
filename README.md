@@ -72,9 +72,9 @@ ValliStart is a Rainmeter skin that replaces the standard Windows start menu wit
 
 Assuming you successfully downloaded and installed Rainmeter as well as JaxCore, you can now proceed to install ValliStart by following the steps below.
 
-1. Download and run the `.rmskin` file for **ValliStart** from the official [JaxCore site](https://jax-core.github.io/) to install **ValliStart**.
+1. Download and run the `.rmskin` file for **IdleStyle** from the official [JaxCore site](https://jax-core.github.io/) to install **IdleStyle**.
 2. Leave the installation settings at their defaults and click Install.
-3. When the installation is finished, a startup pop-up should appear. Follow through the pop-up to finish installing ValliStart.
+3. When the installation is finished, a startup pop-up should appear. Follow through the pop-up to finish installing IdleStyle.
 
 * Note:  If you find that the JaxCore option is red on the startup pop-up, please press the red button and Core will be installed automatically. Perchance this fails, you can manually install Core by downloading the `.rmskin` file from [JaxCore's official website.](https://jax-core.github.io/)
 
