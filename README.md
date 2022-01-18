@@ -121,7 +121,7 @@ To use video backgrounds, you must first install and configure **[ffmpeg](https:
 And that is how you setup FFMPEG. You can now proceed to configure the video backgrounds for IdleStyle. 
 
 #### Setting up the video background:
-**Follow the steps outlined below to setup custom video backgrounds:**
+Follow the steps outlined below to setup custom video backgrounds:
 
 1. Open Core and head over to the **Modules** section.
 2. Select **IdleStyle** from the list and proceed to the **Animation** tab.
