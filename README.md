@@ -41,7 +41,7 @@
         <li><a href="#static-backgrounds">Static Backgrounds</a></li>
         <li><a href="#video-backgrounds">Video Backgrounds</a>
           <ul>
-            <li><a href="#installing-ffmpeg">Installing FFMPEG</a></li>
+            <li><a href="#installing-ffmpeg">Configuring ffplay</a></li>
             <li><a href="#setting-up-the-video-background">Setting up the video background</a></li>
           </ul>
         </li>
@@ -100,25 +100,18 @@ The background of your screen saver has now been changed.
 
 ### Video Backgrounds
 
-#### Installing FFMPEG:
+#### Configuring ffplay:
 
-To use video backgrounds, you must first install and configure **[ffmpeg](https://github.com/BtbN/FFmpeg-Builds/releases).** If you already have FFMPEG installed, you can skip this step; if not, follow the instructions below.
+To use video backgrounds, you must first install and configure **ffplay** which is a part of **[ffmpeg](https://github.com/BtbN/FFmpeg-Builds/releases).** Follow the instructions below to setup **ffplay**.
 
 1. Open [this link](https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip). This link will download a zipped file named `ffmpeg-master-latest-win64-gpl.zip`
-2. Extract the zipped file you just downloaded and open the `ffmpeg-master-latest-win64-gpl` folder. Inside, you will find another folder with the same name which we will be renaming in the next step.
-3. Rename the folder to `ffmpeg`. **Please rename it as directed and do not make any changes to the folder name.**
-4. Copy the entire folder (`CTRL + C`) 
-5. Open File Explorer and navigate to `C:\`; your Windows Drive. **The Windows Drive is typically the `C:` drive, but it may differ for you, so please double-check and navigate to the correct drive.**
-5. Paste the folder in the `C:\` drive.
-6. Open the `ffmpeg` folder you just pasted and go into the `bin` folder.
-7. Now, copy the file location by clicking on the top bar that displays it. If your Windows drive is the `C:` drive, the path should be `C:\ffmpeg\bin`. However, if your Windows Drive is something other than the `C:` drive, the file location will be in accordance with the Windows Drive.
-8. You can now exit out of File Explorer.
-9. Open Run(`Win + R`), paste in `rundll32.exe sysdm.cpl,EditEnvironmentVariables` and press **OK**. This will open a new dialogue box in which we will make the remaining changes.
-10. Under the `User variables for yourusername` section, select `Path` and press **Edit**. **Please note that `yourusername` here is referring to your PC's username. For example : `User variables for Jax`**
-11. Once a new window appears, press **New** that will be on the right hand side, and paste in the file location you copied in **Step 7** i.e. `C:\ffmpeg\bin`.
-12. Press **OK** and then **OK** again and exit out of everything.
+2. Extract the zipped file you just downloaded and open the `ffmpeg-master-latest-win64-gpl` folder. Inside, you will find another folder with the same name which we will required in the next step.
+3. Open the `ffmpeg-master-latest-win64-gpl` folder, and go into the `bin` folder.
+4. Copy the `ffplay.exe` (`CTRL + C`). 
+5. Open File Explorer and navigate to `C:\Users\yourusername\Documents\Rainmeter\CoreData\IdleStyle`. **The Windows Drive is typically the `C:` drive, but it may differ for you, so please double-check and navigate to the correct folder.** Also, **please note that `yourusername` here is referring to your PC's username. For example : `C:\Users\Jax\....`**
+6. Paste the `ffplay.exe` you copied in **Step 4** into the folder named `IdleStyle` which you opened, on **Step 5**
 
-And that is how you setup FFMPEG. You can now proceed to configure the video backgrounds for IdleStyle. 
+And that is how you setup **ffplay**. You can now proceed to configure the video backgrounds for IdleStyle. 
 
 #### Setting up the video background:
 Follow the steps outlined below to setup custom video backgrounds:
