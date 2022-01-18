@@ -105,7 +105,7 @@ The background of your screen saver has now been changed.
 To use video backgrounds, you must first install and configure **ffplay** which is a part of **[ffmpeg](https://github.com/BtbN/FFmpeg-Builds/releases).** Follow the instructions below to setup **ffplay**.
 
 1. Open [this link](https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip). This link will download a zipped file named `ffmpeg-master-latest-win64-gpl.zip`
-2. Extract the zipped file you just downloaded and open the `ffmpeg-master-latest-win64-gpl` folder. Inside, you will find another folder with the same name which we will required in the next step.
+2. Extract the zipped file you just downloaded and open the `ffmpeg-master-latest-win64-gpl` folder. Inside, you will find another folder with the same name which will be required in the next step.
 3. Open the `ffmpeg-master-latest-win64-gpl` folder, and go into the `bin` folder.
 4. Copy the `ffplay.exe` (`CTRL + C`). 
 5. Open File Explorer and navigate to `C:\Users\yourusername\Documents\Rainmeter\CoreData\IdleStyle`. **The Windows Drive is typically the `C:` drive, but it may differ for you, so please double-check and navigate to the correct folder.** Also, **please note that `yourusername` here is referring to your PC's username. For example : `C:\Users\Jax\....`**
