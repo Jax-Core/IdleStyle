@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Jax-Core/ValliStart">
-    <img src="https://imgur.com/rBXxbzz.png" alt="Logo" width="120" height="120">
+    <img src="https://imgur.com/rBXxbzz.png" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">ValliStart</h3>
