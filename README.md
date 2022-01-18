@@ -80,7 +80,7 @@ Assuming you successfully downloaded and installed Rainmeter as well as JaxCore,
 
 ## Custom Animations Setup
 
-Now that you've installed and setup IdleStyle, let's begin setting up some modules it comes with!
+Now that you've installed and setup IdleStyle, let's begin setting up some custom animations it comes with!
 
 ### Static Backgrounds
 
@@ -95,12 +95,39 @@ The background of your screen saver has now been changed. **Please select common
 
 ### Video Backgrounds
 
+#### Installing FFMPEG
 
+To use video backgrounds, you must first install and configure **[ffmpeg](https://github.com/BtbN/FFmpeg-Builds/releases).** If you already have FFMPEG installed, you can skip this step; if not, follow the instructions below.
+
+1. Open [this link](https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip). This link will download a zipped file named `ffmpeg-master-latest-win64-gpl.zip`
+2. Extract the zipped file you just downloaded and open the `ffmpeg-master-latest-win64-gpl` folder. Inside, you will find another folder with the same name which we will be renaming in the next step.
+3. Rename the folder to `ffmpeg`. (Please rename it as directed and do not make any changes to the folder name.)
+4. Copy the entire folder (`CTRL + C`) 
+5. Open File Explorer and navigate to `C:\`; your Windows Drive(This is usually C: but it could be different for you, so please check and navigate to the correct drive)
+5. Paste the folder in the `C:\` drive.
+6. Open the `ffmpeg` folder you just pasted and go into the `bin` folder.
+7. Now click on the top bar that shows the file location and copy the file location. If your Windows Drive is the C drive it should look like this `C:\ffmpeg\bin`. Although, if your Windows Drive is something else, it will be in accordance with the Windows Drive. 
+8. You can now exit out of File Explorer.
+9. Open Run(`Win + R`), paste in `rundll32.exe sysdm.cpl,EditEnvironmentVariables` and press Ok. This will open a new dialouge where we will be making the rest of the changes.
+10. Under the `User variables for yourusername` section, select `Path` and press **Edit**.
+11. Once a new window appears, press **New** that will be on the right hand, and paste in the file location you copied in **Step 7** i.e. `C:\ffmpeg\bin`.
+12. Press **OK** and then **OK** again and exit out of everything.
+
+And that is how you setup FFMPEG. You can now proceed to configure the video backgrounds for IdleStyle. **Simply follow the steps outlined below:**
+
+1. Open Core and head over to the **Modules** section.
+2. Select **IdleStyle** from the list and proceed to the **Animation** tab.
+3. Enable the custom video background preset, second from the bottom.
+3. Go to **Appearance** tab and Under **Customization** press the `DefaultVideo` button besides the `Video Path` text.
+4. Select the custom video background you would like to use.
+5. Refresh IdleStyle by deactivating and activating again using the toggle on the bottom left.
+
+The background of your screen saver has now been changed. **Please select common file formats such as `.mp4`**
 
 **The other animations, on the other hand, do not necessitate the installation of any additional applications or extensions. So, you can simply enable them using the same method as described above for the Static Backgrounds animation.**
 
 **You can also customize the color scheme for every animation as per need.**
 
 ## Help and Credits
-- [IsFullScreen](https://www.deviantart.com/users/outgoing?https://forum.rainmeter.net/viewtopic.php?t=28305) plugin by jsmorley
+- [IsFullScreen](https://forum.rainmeter.net/viewtopic.php?t=28305#p147499) plugin by jsmorley
 - Join the [Core Community Discord Server](https://discord.gg/JmgehPSDD6) for more help.
