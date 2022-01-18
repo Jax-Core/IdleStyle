@@ -108,7 +108,7 @@ To use video backgrounds, you must first install and configure **[ffmpeg](https:
 2. Extract the zipped file you just downloaded and open the `ffmpeg-master-latest-win64-gpl` folder. Inside, you will find another folder with the same name which we will be renaming in the next step.
 3. Rename the folder to `ffmpeg`. **Please rename it as directed and do not make any changes to the folder name.**
 4. Copy the entire folder (`CTRL + C`) 
-5. Open File Explorer and navigate to `C:\`; your Windows Drive(This is typically **C:**, but it may differ for you, so please double-check and navigate to the correct drive.)
+5. Open File Explorer and navigate to `C:\`; your Windows Drive. The Windows Drive is typically the `C:` drive, but it may differ for you, so please double-check and navigate to the correct drive.
 5. Paste the folder in the `C:\` drive.
 6. Open the `ffmpeg` folder you just pasted and go into the `bin` folder.
 7. Now, copy the file location by clicking on the top bar that displays it. If your Windows drive is the C drive, the path should be `C:\ffmpeg\bin`. However, if your Windows Drive is something other than **C:**, the file location will be in accordance with the Windows Drive.
