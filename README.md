@@ -92,11 +92,11 @@ Now that you've installed and setup IdleStyle, let's begin setting up some custo
 1. Open Core and head over to the **Modules** section.
 2. Select **IdleStyle** from the list and proceed to the **Animation** tab.
 3. Enable the custom background preset all the way at the bottom.
-3. Go to **Appearance** tab and Under **Customization** press the `DefaultPaper` button besides the `Wallpaper Path` text.
-4. Select the custom background you would like to use.
+3. Go to **Appearance** tab and under **Customization** press the `DefaultPaper` button besides the `Wallpaper Path` text.
+4. Select the custom background you would like to use. **Please select common file formats such as `.jpg` or `.png`**
 5. Refresh **IdleStyle** by deactivating and activating the toggle on the bottom left.
 
-The background of your screen saver has now been changed. **Please select common file formats such as `.jpg` or `.png`**
+The background of your screen saver has now been changed. 
 
 ### Video Backgrounds
 
@@ -124,11 +124,11 @@ And that is how you setup FFMPEG. You can now proceed to configure the video bac
 1. Open Core and head over to the **Modules** section.
 2. Select **IdleStyle** from the list and proceed to the **Animation** tab.
 3. Second from the bottom, enable the custom video background preset.
-3. Go to **Appearance** tab and Under **Customization** press the `DefaultVideo` button besides the `Video Path` text.
-4. Choose the custom video background you want to use.
+3. Go to **Appearance** tab and under **Customization** press the `DefaultVideo` button besides the `Video Path` text.
+4. Choose the custom video background you want to use. **Please select common file formats such as `.mp4`**
 5. Refresh **IdleStyle** by deactivating and activating the toggle on the bottom left.
 
-The background of your screen saver has now been changed. **Please select common file formats such as `.mp4`**
+The background of your screen saver has now been changed. 
 
 **The other animations, on the other hand, do not necessitate the installation of any additional applications or extensions. So, you can simply enable them using the same method as described above for the Static Backgrounds animation.**
 
