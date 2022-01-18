@@ -108,18 +108,20 @@ To use video backgrounds, you must first install and configure **[ffmpeg](https:
 2. Extract the zipped file you just downloaded and open the `ffmpeg-master-latest-win64-gpl` folder. Inside, you will find another folder with the same name which we will be renaming in the next step.
 3. Rename the folder to `ffmpeg`. **Please rename it as directed and do not make any changes to the folder name.**
 4. Copy the entire folder (`CTRL + C`) 
-5. Open File Explorer and navigate to `C:\`; your Windows Drive. The Windows Drive is typically the `C:` drive, but it may differ for you, so please double-check and navigate to the correct drive.
+5. Open File Explorer and navigate to `C:\`; your Windows Drive. **The Windows Drive is typically the `C:` drive, but it may differ for you, so please double-check and navigate to the correct drive.**
 5. Paste the folder in the `C:\` drive.
 6. Open the `ffmpeg` folder you just pasted and go into the `bin` folder.
-7. Now, copy the file location by clicking on the top bar that displays it. If your Windows drive is the C drive, the path should be `C:\ffmpeg\bin`. However, if your Windows Drive is something other than **C:**, the file location will be in accordance with the Windows Drive.
+7. Now, copy the file location by clicking on the top bar that displays it. If your Windows drive is the `C:` drive, the path should be `C:\ffmpeg\bin`. However, if your Windows Drive is something other than the `C:` drive, the file location will be in accordance with the Windows Drive.
 8. You can now exit out of File Explorer.
 9. Open Run(`Win + R`), paste in `rundll32.exe sysdm.cpl,EditEnvironmentVariables` and press **OK**. This will open a new dialogue box in which we will make the remaining changes.
-10. Under the `User variables for yourusername` section, select `Path` and press **Edit**.
+10. Under the `User variables for yourusername` section, select `Path` and press **Edit**. **Please note that `yourusername` here is referring to your PC's username. For example : `User variables for Jax`**
 11. Once a new window appears, press **New** that will be on the right hand side, and paste in the file location you copied in **Step 7** i.e. `C:\ffmpeg\bin`.
 12. Press **OK** and then **OK** again and exit out of everything.
 
+And that is how you setup FFMPEG. You can now proceed to configure the video backgrounds for IdleStyle. 
+
 #### Setting up the video background
-And that is how you setup FFMPEG. You can now proceed to configure the video backgrounds for IdleStyle. **Simply follow the steps outlined below:**
+**Follow the steps outlined below to setup custom video backgrounds:**
 
 1. Open Core and head over to the **Modules** section.
 2. Select **IdleStyle** from the list and proceed to the **Animation** tab.
