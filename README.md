@@ -100,7 +100,7 @@ The background of your screen saver has now been changed.
 
 ### Video Backgrounds
 
-#### Installing FFMPEG
+#### Installing FFMPEG:
 
 To use video backgrounds, you must first install and configure **[ffmpeg](https://github.com/BtbN/FFmpeg-Builds/releases).** If you already have FFMPEG installed, you can skip this step; if not, follow the instructions below.
 
@@ -120,7 +120,7 @@ To use video backgrounds, you must first install and configure **[ffmpeg](https:
 
 And that is how you setup FFMPEG. You can now proceed to configure the video backgrounds for IdleStyle. 
 
-#### Setting up the video background
+#### Setting up the video background:
 **Follow the steps outlined below to setup custom video backgrounds:**
 
 1. Open Core and head over to the **Modules** section.
