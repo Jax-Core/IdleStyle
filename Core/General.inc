@@ -19,7 +19,15 @@ Meter=Shape
 MeterStyle=Set.Div:S
 [Option03]
 Meter=String
+Text=Ignore idle duration and manually activate IdleStyle forcefully
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:44438]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option04]
+Meter=String
 Text=Time till the window shows
+FontColor=#Set.Text_Color#,(255-105*#IgnoreIdleDuration#)
 MeterStyle=Set.String:S | Set.OptionName:S
 
 [Position]
@@ -43,7 +51,7 @@ Meter=Shape
 MeterStyle=Set.Div:S
 [Option13]
 Meter=String
-Text=Amount of screens to stretch horizontally
+Text=Number of screens to stretch horizontally
 FontColor=#Set.Text_Color#,(150+105*#SmartOverlayDetection#)
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:1231123]
@@ -146,14 +154,21 @@ Meter=String
 Text=#Key2InString#
 MeterStyle=Set.String:S | Set.Value:S
 
+[IgnoreIdleDuration]
+Meter=Shape
+MeterStyle=Set.Bool:S
+Y=([Option03:Y]-#Set.P#+(-20/2+8)*[Set.S])
+
 [TimeOut]
 Meter=Shape
 MeterStyle=Set.Textbox:S
 Type=Time
-Y=([Option03:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[Value03]
+Hidden=#IgnoreIdleDuration#
+Y=([Option04:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Value04]
 Meter=String
 Text=#TimeOut#
+Hidden=#IgnoreIdleDuration#
 MeterStyle=Set.String:S | Set.Value:S
 
 [SmartOverlayDetection]
