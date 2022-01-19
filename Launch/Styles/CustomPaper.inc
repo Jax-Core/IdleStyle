@@ -75,7 +75,7 @@ MeterStyle=Style:#LineTwoStyle#
 [Style:IdleDuration]
 Text=Idle for [&Func:disp_time([&IdleTime:])]
 [Style:Time]
-Text=[mTime#2412#]
+Text=[mTime#gVar.2412#]
 [Style:GreetingMessage]
 Text=#TimeString#
 [Style:BatteryLevel]

@@ -1,8 +1,0 @@
-@Resources\Vars.inc
-Launch\Vars\CoreUI.inc
-Launch\Vars\CustomPaper.inc
-Launch\Vars\CustomGroup.inc
-Launch\Vars\CustomVideo.inc
-Launch\Vars\JD.inc
-Launch\Vars\Ninety.inc
-Launch\Vars\String.inc

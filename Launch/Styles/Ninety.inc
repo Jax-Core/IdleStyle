@@ -85,7 +85,7 @@ FontSize=40
 Text=Idle for [&Func:disp_time([&IdleTime:])]
 [Style:Time]
 FontSize=50
-Text=[mTime#2412#]
+Text=[mTime#gVar.2412#]
 [Style:GreetingMessage]
 FontSize=30
 Text=#TimeString#

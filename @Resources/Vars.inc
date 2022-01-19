@@ -1,6 +1,6 @@
 [Variables]
+@includegVar1=#SKINSPATH##JaxCore\@Resources\gVars\Time.inc
 TimeOut=5m
-2412=I
 
 FullScreenCheck=0
 YoutubeCheck=1

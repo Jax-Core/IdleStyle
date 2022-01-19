@@ -133,35 +133,45 @@ Y=([JDWS:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Meter=String
 MeterStyle=Set.String:S | Set.Icon:S
 
-[WeatherLocation]
+[Button11]
 Meter=Shape
-MeterStyle=Set.Textbox:S
-Type=Txt
+MeterStyle=Set.Button:S
 Y=([Option11:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Act=[!WriteKeyvalue Variables Skin.Name """#JaxCore""" "#@#SecVar.inc"][!WriteKeyvalue Variables Skin.Set_Page GlobalVars "#@#SecVar.inc"][!Refresh]
+[Icon11]
+Meter=String
+Text=[\xe895]
+FontFace=Material Icons Round
+FontSize=(14*[Set.S])
+FontColor=#Set.Subtext_Color#
+MeterStyle=Set.String:S | Set.Value:S
 [Value11]
 Meter=String
-Text=#WeatherLocation#
+X=(-25*[Set.S])r
+Y=r
+Text=Change global variable
+FontColor=#Set.Subtext_Color#
 MeterStyle=Set.String:S | Set.Value:S
 
-[WeatherUnits:]
+[Button12]
 Meter=Shape
-Shape2=Rectangle ([&Func:returnBool('WeatherUnits', 'Metric')] = 0 ? 0 : (150*[Set.S])),0,(150*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0 |
-0Act=[!WriteKeyValue Variables WeatherUnits "Imperial" "#Sec.SaveLocation#"]
-1Act=[!WriteKeyValue Variables WeatherUnits "Metric" "#Sec.SaveLocation#"]
-MeterStyle=Set.Pick:S
+MeterStyle=Set.Button:S
 Y=([Option12:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[WeatherUnits:0]
+Act=[!WriteKeyvalue Variables Skin.Name """#JaxCore""" "#@#SecVar.inc"][!WriteKeyvalue Variables Skin.Set_Page GlobalVars "#@#SecVar.inc"][!Refresh]
+[Icon12]
 Meter=String
-Text=Imperial
-FontColor=([&Func:returnBool('WeatherUnits', 'Metric')] = 0 ? 0 : 255),([&Func:returnBool('WeatherUnits', 'Metric')] = 0 ? 0 : 255),([&Func:returnBool('WeatherUnits', 'Metric')] = 0 ? 0 : 255)
-LeftMouseUpAction=[&Func:GroupVar('#CURRENTSECTION#', '0Act')][!Refresh][!UpdateMeasure Auto_Refresh:M]
-MeterStyle=Set.String:S | Set.PickOption_0:S
-[WeatherUnits:1]
+Text=[\xe895]
+FontFace=Material Icons Round
+FontSize=(14*[Set.S])
+FontColor=#Set.Subtext_Color#
+MeterStyle=Set.String:S | Set.Value:S
+[Value12]
 Meter=String
-Text=Metric
-FontColor=([&Func:returnBool('WeatherUnits', 'Metric')] = 1 ? 0 : 255),([&Func:returnBool('WeatherUnits', 'Metric')] = 1 ? 0 : 255),([&Func:returnBool('WeatherUnits', 'Metric')] = 1 ? 0 : 255)
-LeftMouseUpAction=[&Func:GroupVar('#CURRENTSECTION#', '1Act')][!Refresh][!UpdateMeasure Auto_Refresh:M]
-MeterStyle=Set.String:S | Set.PickOption_1:S
+X=(-25*[Set.S])r
+Y=r
+Text=Change global variable
+FontColor=#Set.Subtext_Color#
+MeterStyle=Set.String:S | Set.Value:S
 
 ; [Language]
 ; Meter=Shape
@@ -170,7 +180,7 @@ MeterStyle=Set.String:S | Set.PickOption_1:S
 ; Y=([Option13:Y]-#Set.P#+(-30/2+8)*[Set.S])
 ; [Value13]
 ; Meter=String
-; Text=#Language#
+; Text=#gVar.Language#
 ; MeterStyle=Set.String:S | Set.Value:S
 
 [24HTime]

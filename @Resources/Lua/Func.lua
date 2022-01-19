@@ -50,10 +50,12 @@ function Update()
     if enabled == nil then enabled = 0 end
     if TimeOutRequirement <= SKIN:GetMeasure('Idletime'):GetValue() and enabled == 0 and SKIN:GetMeasure('mToggle'):GetValue() == 1 then
         SKIN:Bang('!ActivateConfig', 'IdleStyle\\Launch', 'Main.ini')
+        SKIN:Bang('[!CommandMeasure Esc Stop]')
         enabled = 1
     elseif TimeOutRequirement > SKIN:GetMeasure('Idletime'):GetValue() and enabled == 1 and forced == 0 then
         enabled = 0
         SKIN:Bang('!CommandMeasure', 'mActions', 'Execute 2', 'IdleStyle\\Launch', 'Main.ini')
+        SKIN:Bang('[!CommandMeasure Esc Stop]')
     end
     if forced == 1 then
         forcedTime = forcedTime + 1
@@ -66,10 +68,20 @@ function Update()
             forcedTime = 0
             enabled = 0
             SKIN:Bang('!CommandMeasure', 'mActions', 'Execute 2', 'IdleStyle\\Launch', 'Main.ini')
+            SKIN:Bang('[!CommandMeasure Esc Stop]')
         end
     end
     -- print('ForcedTime:'..forcedTime..' | Enabled:'..enabled..' | Forced?'..forced..' | IdleTime'..SKIN:GetMeasure('Idletime'):GetValue()..' | TimeOutRequirement:'..TimeOutRequirement)
 end
+
+function EndIdle()
+    forced = 0
+    forcedTime = 0
+    enabled = 0
+    SKIN:Bang('!CommandMeasure', 'mActions', 'Execute 2', 'IdleStyle\\Launch', 'Main.ini')
+    SKIN:Bang('[!CommandMeasure Esc Stop]')
+end
+
 
 function Force()
     forced = 1
