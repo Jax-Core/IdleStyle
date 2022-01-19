@@ -50,7 +50,7 @@ function Update()
     if enabled == nil then enabled = 0 end
     if TimeOutRequirement <= SKIN:GetMeasure('Idletime'):GetValue() and enabled == 0 and SKIN:GetMeasure('mToggle'):GetValue() == 1 then
         SKIN:Bang('!ActivateConfig', 'IdleStyle\\Launch', 'Main.ini')
-        SKIN:Bang('[!CommandMeasure Esc Stop]')
+        SKIN:Bang('[!CommandMeasure Esc Start]')
         enabled = 1
     elseif TimeOutRequirement > SKIN:GetMeasure('Idletime'):GetValue() and enabled == 1 and forced == 0 then
         enabled = 0
@@ -87,6 +87,7 @@ function Force()
     forced = 1
     enabled = 1
     SKIN:Bang('!ActivateConfig', 'IdleStyle\\Launch', 'Main.ini')
+    SKIN:Bang('[!CommandMeasure Esc Start]')
 end
 
 function disp_time(time)
