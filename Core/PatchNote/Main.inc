@@ -16,7 +16,7 @@ MeterStyle=Sec.String:S | Style.Title:S
 
 [Description.1]
 Meter=String
-Text="- Fixed JD weather api key."
+Text="- NEW! Hit the esc key to quickly close IdleStyle when it's active."
 MeterStyle=Sec.String:S | Style.Description:S
 ; [Link.1]
 ; Meter=String
@@ -24,10 +24,10 @@ MeterStyle=Sec.String:S | Style.Description:S
 ; LeftMouseUpAction=["https://jax-core.github.io/"]
 ; MeterStyle=Sec.String:S | Style.Link:S
 
-; [Description.2]
-; Meter=String
-; Text="- NEW! Scrolling text in side variant (first in the list)"
-; MeterStyle=Sec.String:S | Style.Description:S
+[Description.2]
+Meter=String
+Text="- IdleStyle now uses global variables for some options."
+MeterStyle=Sec.String:S | Style.Description:S
 
 ; [Description.3]
 ; Meter=String
