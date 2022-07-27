@@ -69,19 +69,19 @@ IdleStyle is a Rainmeter skin that offers fully customizable screensavers with c
 ## Getting Started
 
 ### Prerequisites
+- **Windows 10** or above
+- For older systems, **Powershell v5.1 or newer** is required. Upgrade powershell **[here](https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7.2#upgrading-existing-windows-powershell)**!
 
-- **Rainmeter v4.5 or newer.** Rainmeter can be installed by downloading the `.exe` file [from Rainmeter's official website.](https://www.rainmeter.net/)
-- **JaxCore v40005.** JaxCore can be installed by downloading the `.rmskin` file from [JaxCore's official website.](https://jax-core.github.io/)
+### Installation 
+Run the following command in Powershell to get the latest version of JaxCore (`win + r` -> `powershell.exe` / search)
+```
+Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/Jax-Core/JaxCore/master/CoreInstaller.ps1" | Invoke-Expression
+```
+Alternatively you can get it on the [website](https://jax-core.github.io/)
 
-### Installation
-
-Assuming you successfully downloaded and installed Rainmeter as well as JaxCore, you can now proceed to install IdleStyle by following the steps below.
-
-1. Download and run the `.rmskin` file for **IdleStyle** from the official [JaxCore site](https://jax-core.github.io/) to install **IdleStyle**.
-2. Leave the installation settings at their defaults and click Install.
-3. When the installation is finished, a startup pop-up should appear. Follow through the pop-up to finish installing **IdleStyle**.
-
-* Note:  If you find that the JaxCore option is red on the startup pop-up, please press the red button and Core will be installed automatically. Perchance this fails, you can manually install Core by downloading the `.rmskin` file from [JaxCore's official website.](https://jax-core.github.io/)
+After you've proceeded through the welcome screen, select this module and click Install. It will appear in the library page after that.
+<br />
+<br />
 
 ## Custom Animations Setup
 
