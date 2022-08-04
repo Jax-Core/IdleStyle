@@ -12,6 +12,7 @@
     <a href="https://discord.gg/JmgehPSDD6">Help, Report Bugs & Request Features »</a>
   </p>
 </div>
+
 <!-- END Header.mustache -->
 <!-- START ShieldsBasic.mustache -->
 <p align="center">
@@ -25,6 +26,7 @@
 ## About
 
 ![IdleStyle](https://raw.githubusercontent.com/Jax-Core/ReadME-Template/main/Resources/Splash/IdleStyle.png)
+
 <!-- END About.mustache -->
 **IdleStyle** offers fully customizable screensavers with custom animation support. Custom animations can be used to display a range of things such as images and videos. If you want people to notice the fancy side of your desktop, this is a must-have!
 
@@ -50,14 +52,15 @@ Run the following command in Powershell to download the latest version of JaxCor
 (To launch Powershell as an Admin: `Win + R` -> `powershell` -> Press `CTRL + SHIFT + ENTER` on your keyboard. Powershell can also be launched via Windows Search.)
 
 ```
-Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/Jax-Core/JaxCore/master/CoreInstaller.ps1" | Invoke-Expression
+iwr -useb "https://raw.githubusercontent.com/Jax-Core/JaxCore/master/CoreInstaller.ps1" | iex
 ```
 
 > Alternatively you can download it from the [website](https://jax-core.github.io/)
 
 After you've proceeded through the welcome screen, select `IdleStyle` (might have to scroll down) and click `Install`. It will appear in the library page after that.
 <br />
-<br /><!-- END GetStarted.mustache -->
+<br />
+<!-- END GetStarted.mustache -->
 <!-- START Setup.mustache -->
 
 ### Configuration
